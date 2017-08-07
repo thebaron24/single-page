@@ -1,0 +1,43 @@
+{
+  "name": "single-page",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "clean": "npm run clean:all",
+    "clean:modules": "rimraf node_modules",
+    "clean:all": "rimraf dist rimraf build",
+    "clean:dev": "rimraf build",
+    "clean:prod": "rimraf dist",
+    "build": "npm run build:dev",
+    "build:dev": "webpack --env=dev --progress --profile --colors",
+    "build:prod": "webpack --env=prod --progress --profile --colors",
+    "serve": "npm run serve:dev",
+    "serve:dev": " start webpack-dev-server --env=dev --open",
+    "serve:prod": " start webpack-dev-server --env=prod --open",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "clean-webpack-plugin": "^0.1.16",
+    "css-loader": "^0.28.4",
+    "exports-loader": "^0.6.4",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "file-loader": "^0.11.2",
+    "handlebars-loader": "^1.5.0",
+    "html-webpack-plugin": "^2.30.1",
+    "node-sass": "^4.5.3",
+    "resolve-url-loader": "^2.1.0",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.18.2",
+    "webpack": "^3.4.1",
+    "webpack-dev-server": "^2.6.1"
+  },
+  "dependencies": {
+    "handlebars": "^4.0.10",
+    "material-design-icons": "^3.0.1",
+    "material-design-lite": "^1.3.0"
+  }
+}
