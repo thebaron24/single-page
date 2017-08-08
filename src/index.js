@@ -1,8 +1,6 @@
 import styles from 'styles';
 import * as mdc from 'material-components-web';
-// var componentHandler = require('exports-loader?componentHandler!material-design-lite/material.js')
 var Template = require("./templates/template.handlebars");
-
 var app;
 
 const config = {
@@ -94,7 +92,6 @@ function AppComponent() {
 	app.innerHTML = Template(config);
 	document.body.className = "";
 	document.body.appendChild(app);
-	// componentHandler.upgradeDom();
 
     var drawerEl = document.querySelector('.mdc-persistent-drawer');
     var MDCPersistentDrawer = mdc.drawer.MDCPersistentDrawer;

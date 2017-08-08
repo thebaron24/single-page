@@ -1,6 +1,6 @@
 # Single-Page
 
-This is a single page scroller project built using [Material-Handlebars](https://github.com/thebaron24/material-handlebars) seed project which uses [webpack](https://webpack.js.org/), [handlebars](http://handlebarsjs.com/), and [material design lite](https://github.com/google/material-design-lite).
+This is a single page scroller project built using [Material-Handlebars](https://github.com/thebaron24/material-handlebars) seed project which uses [webpack](https://webpack.js.org/), [handlebars](http://handlebarsjs.com/), and [material-components-web](https://github.com/material-components/material-components-web).
 
 ## Dependencies
 
