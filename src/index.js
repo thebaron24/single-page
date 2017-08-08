@@ -1,5 +1,6 @@
 import styles from 'styles';
-var componentHandler = require('exports-loader?componentHandler!material-design-lite/material.js')
+import * as mdc from 'material-components-web';
+// var componentHandler = require('exports-loader?componentHandler!material-design-lite/material.js')
 var Template = require("./templates/template.handlebars");
 
 var app;
@@ -89,9 +90,24 @@ const config = {
 function AppComponent() {
 	app = document.createElement('div');
 	app.id = "app";
+	app.className = "mdc-typography";
 	app.innerHTML = Template(config);
+	document.body.className = "";
 	document.body.appendChild(app);
-	componentHandler.upgradeDom();
+	// componentHandler.upgradeDom();
+
+    var drawerEl = document.querySelector('.mdc-persistent-drawer');
+    var MDCPersistentDrawer = mdc.drawer.MDCPersistentDrawer;
+    var drawer = new MDCPersistentDrawer(drawerEl);
+    document.querySelector('.demo-menu').addEventListener('click', function() {
+      drawer.open = !drawer.open;
+    });
+    drawerEl.addEventListener('MDCPersistentDrawer:open', function() {
+      console.log('Received MDCPersistentDrawer:open');
+    });
+    drawerEl.addEventListener('MDCPersistentDrawer:close', function() {
+      console.log('Received MDCPersistentDrawer:close');
+    });
 }
 
 AppComponent();
