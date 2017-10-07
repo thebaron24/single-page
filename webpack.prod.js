@@ -19,7 +19,7 @@ module.exports = {
 		],
 		extensions: [".js", ".json",".scss", ".handlebars"]
 	},
-	devtool : 'source-map',
+	// devtool : 'source-map',
 	module: {
 		rules: [
 			{
@@ -53,7 +53,16 @@ module.exports = {
 				})
 			},
 			{	test: /\.handlebars$/, loader: "handlebars-loader" },
-			{	test: /\.js$/, loader: 'exports-loader' },
+			// {	test: /\.js$/, loader: 'exports-loader' },
+			{
+		      	test: /\.js$/,
+		      	use: {
+		        	loader: 'babel-loader',
+		        	options: {
+		          		presets: ['env']
+		        	}
+		      	}
+		    },
 			{	test: /\.(png|svg|jpg|gif)$/, use: ['file-loader'] },
 			{	test: /\.(woff|woff2|eot|ttf|otf)$/, loader: 'file-loader?publicPath=../&name=fonts/[name].[ext]' }
 		]
