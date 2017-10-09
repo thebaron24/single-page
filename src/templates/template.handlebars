@@ -1,45 +1,12 @@
-{{!-- <!-- Always shows a header, even in smaller screens. -->
-<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-  <header class="mdl-layout__header">
-    <div class="mdl-layout__header-row">
-      <!-- Title -->
-      <span class="mdl-layout-title">Title</span>
-      <!-- Add spacer, to align navigation to the right -->
-      <div class="mdl-layout-spacer"></div>
-      <!-- Navigation. We hide it in small screens. -->
-      <nav class="mdl-navigation mdl-layout--large-screen-only">
-        {{#each this.nav}}
-          <a class="mdl-navigation__link" href="{{this.linkUrl}}">{{this.linkName}}</a>
-        {{/each}}
-      </nav>
-    </div>
-  </header>
-  <div class="mdl-layout__drawer">
-    <span class="mdl-layout-title">Title</span>
-    <nav class="mdl-navigation">
-      {{#each this.nav}}
-        <a class="mdl-navigation__link" href="{{this.linkUrl}}">{{this.linkName}}</a>
-      {{/each}}
-    </nav>
-  </div>
-  <main class="mdl-layout__content">
-    <div class="page-content"><!-- Your content goes here -->
-    {{#each this.nav}}
-      <section id="{{this.linkSlug}}" style="min-height: {{this.sectionHeight}}; background: {{this.sectionBackground}}">
-        <h2>{{this.sectionTitle}}</h2>
-        {{#each this.content}}
-          <p>{{this.paragraph}}</p>
-        {{/each}}
-      </section>
-    {{/each}}
-    </div>
-  </main>
-</div> --}}
+<aside class="mdc-temporary-drawer mdc-typography">
+  <nav class="mdc-temporary-drawer__drawer">
 
+    <header class="mdc-temporary-drawer__header">
+      <div class="mdc-temporary-drawer__header-content">
+        Header here
+      </div>
+    </header>
 
-<aside class="mdc-persistent-drawer">
-  <nav class="mdc-persistent-drawer__drawer">
-    <div class="mdc-persistent-drawer__toolbar-spacer"></div>
     <div class="mdc-list-group">
       <nav class="mdc-list">
         <a class="mdc-list-item" href="#">
@@ -70,9 +37,12 @@
           </a>
         </nav>
       </div>
+
   </nav>
 </aside>
+
 <div class="content">
+
   <header class="mdc-toolbar mdc-elevation--z4">
     <div class="mdc-toolbar__row">
       <section class="mdc-toolbar__section mdc-toolbar__section--align-start">

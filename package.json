@@ -21,7 +21,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "babel-core": "^6.26.0",
+    "babel-cli": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.0",
     "clean-webpack-plugin": "^0.1.17",
@@ -39,6 +39,7 @@
     "webpack-dev-server": "^2.9.1"
   },
   "dependencies": {
+    "babel-polyfill": "^6.26.0",
     "handlebars": "^4.0.10",
     "material": "^0.2.4",
     "material-components-web": "^0.22.0",
