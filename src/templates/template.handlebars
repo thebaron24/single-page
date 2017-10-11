@@ -1,60 +1,78 @@
+<header class="header-toolbar mdc-toolbar mdc-toolbar--fixed mdc-toolbar--waterfall mdc-toolbar--flexible mdc-toolbar--flexible-space-maximized">
+  <div class="mdc-toolbar__row">
+    <section class="mdc-toolbar__section mdc-toolbar__section--align-start">
+      {{!-- <a href="#" class="material-icons mdc-toolbar__icon--menu">menu</a> --}}
+      <button class="menu material-icons mdc-toolbar__icon--menu">{{this.menuIcon}}</button>
+      {{!-- <span class="mdc-toolbar__title">{{this.site}}</span> --}}
+    </section>
+    <section class="mdc-toolbar__section">
+      <span class="mdc-toolbar__title">{{this.site}}</span>
+      {{!-- <img class="responsive-image" src="http://diversitygroupconsult.com/images/logo.png"> --}}
+    </section>
+    <section class="mdc-toolbar__section mdc-toolbar__section--align-end" role="toolbar">
+      {{!-- <a href="#" class="material-icons mdc-toolbar__icon" aria-label="Download" alt="Download">file_download</a>
+      <a href="#" class="material-icons mdc-toolbar__icon" aria-label="Print this page" alt="Print this page">print</a>
+      <a href="#" class="material-icons mdc-toolbar__icon" aria-label="Bookmark this page" alt="Bookmark this page">bookmark</a> --}}
+    </section>
+  </div>
+</header>
+
 <aside class="mdc-temporary-drawer mdc-typography">
   <nav class="mdc-temporary-drawer__drawer">
-
     <header class="mdc-temporary-drawer__header">
-      <div class="mdc-temporary-drawer__header-content">
-        Header here
+      <div class="mdc-temporary-drawer__header-content mdc-theme--primary-bg mdc-theme--text-primary-on-primary">
+        {{!-- <img class="responsive-image" src="http://diversitygroupconsult.com/images/logo.png"> --}}
+        Menu Header
       </div>
     </header>
 
     <div class="mdc-list-group">
       <nav class="mdc-list">
-        <a class="mdc-list-item" href="#">
-          <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">inbox</i>Inbox
-        </a>
-        <a class="mdc-list-item" href="#">
-          <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">star</i>Star
-        </a>
-        <a class="mdc-list-item" href="#">
-          <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">send</i>Sent Mail
-        </a>
-        <a class="mdc-list-item" href="#">
-          <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">drafts</i>Drafts
-        </a>
+        {{#each this.pages}}
+          {{!-- Key: {{@key}} --}}
+          <{{this.menu.element}} class="{{this.menu.class}}" href="{{this.menu.path}}">
+            <i class="{{this.menu.iconClass}}" aria-hidden="true">{{this.menu.icon}}</i>{{this.menu.name}}
+          </{{this.menu.element}}>
+        {{/each}}
       </nav>
-
-      <hr class="mdc-list-divider">
-
-      <nav class="mdc-list">
-          <a class="mdc-list-item" href="#">
-            <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">email</i>All Mail
-          </a>
-          <a class="mdc-list-item" href="#">
-            <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">delete</i>Trash
-          </a>
-          <a class="mdc-list-item" href="#">
-            <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">report</i>Spam
-          </a>
-        </nav>
-      </div>
-
+      {{!-- <hr class="mdc-list-divider"> --}}
+    </div>
   </nav>
 </aside>
 
-<div class="content">
-
-  <header class="mdc-toolbar mdc-elevation--z4">
-    <div class="mdc-toolbar__row">
-      <section class="mdc-toolbar__section mdc-toolbar__section--align-start">
-        <button class="menu material-icons mdc-toolbar__icon--menu">menu</button>
-        <span class="mdc-toolbar__title catalog-title">Single Page</span>
-      </section>
+<main>
+  <div class="mdc-layout-grid">
+    <div class="mdc-layout-grid__inner">
+      {{#each this.pages.index.gridItems}}
+        <{{this.element}} class="{{this.class}}">
+          <!-- grid item -->
+          <article>
+            {{#each this.content}}
+              {{!-- Key: {{@key}} --}}
+              <{{this.element}} class="{{this.class}}">
+                {{this.text}}
+              </{{this.element}}>
+            {{/each}}
+          </article>
+          <!-- end grid item -->
+        </{{this.element}}>
+      {{/each}}
     </div>
-  </header>
+  </div>
+</main>
 
-  <main class="main">
-    <h1 class="mdc-typography--display1">Single Page</h1>
-    <p class="mdc-typography--body1">Click the menu icon above to open and close the drawer.</p>
-  </main>
-  
-</div>
+{{!-- <footer class="mdc-theme--primary-bg"></footer> --}}
+
+<footer class="mdc-toolbar">
+  {{!-- <div class="mdc-toolbar__row">
+    <section class="mdc-toolbar__section mdc-toolbar__section--align-start">
+      <a href="#" class="material-icons mdc-toolbar__icon--menu">menu</a>
+      <span class="mdc-toolbar__title">Title</span>
+    </section>
+    <section class="mdc-toolbar__section mdc-toolbar__section--align-end" role="toolbar">
+      <a href="#" class="material-icons mdc-toolbar__icon" aria-label="Download" alt="Download">file_download</a>
+      <a href="#" class="material-icons mdc-toolbar__icon" aria-label="Print this page" alt="Print this page">print</a>
+      <a href="#" class="material-icons mdc-toolbar__icon" aria-label="Bookmark this page" alt="Bookmark this page">bookmark</a>
+    </section>
+  </div> --}}
+</footer>

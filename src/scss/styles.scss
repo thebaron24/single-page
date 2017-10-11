@@ -1,5 +1,5 @@
-$mdc-theme-primary: #fafafa;
-$mdc-theme-secondary: #78909c;
+$mdc-theme-primary: #2980B9;
+$mdc-theme-secondary: #d9edf7;
 $mdc-theme-background: #fff;
 
 @import "~material-components-web/material-components-web";
@@ -41,31 +41,7 @@ $mdc-theme-background: #fff;
   font-feature-settings: 'liga';
 }
 
-/* Ensure layout covers the entire screen. */
-html, body {
-  height: 100%;
+footer {
   width: 100%;
-  margin: 0;
-  padding: 0;
-}
-/* Place drawer and content side by side. */
-#app {
-  display: flex;
-  flex-direction: row;
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  height: 100%;
-  width: 100%;
-}
-/* Stack toolbar and main on top of each other. */
-.content {
-  display: inline-flex;
-  flex-direction: column;
-  flex-grow: 1;
-  height: 100%;
-  box-sizing: border-box;
-}
-.main {
-  padding-left: 16px;
+  min-height: 200px;
 }

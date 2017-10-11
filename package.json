@@ -2,6 +2,10 @@
   "name": "single-page",
   "version": "1.0.0",
   "description": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thebaron24/single-page"
+  },
   "main": "index.js",
   "scripts": {
     "clean": "npm run clean:all",
